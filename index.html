@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; background: #0d0d0d; }
+  a { color: #4a9ae8; text-decoration: none; }
+  a:hover { color: #ffffff; }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #0d0d0d; color: #f2f2f2; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 28px 24px 64px; box-sizing: border-box;">
+  <div style="max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid #2b2b2b;">
+      <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.4px;">MORAL SQUAD</span>
+
+      <div style="flex: 1;"></div>
+
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <h1 style="margin: 0; font-size: clamp(34px, 6.2vw, 62px); line-height: 1.05; letter-spacing: -1.6px; font-weight: 700; max-width: 20ch; text-wrap: pretty;">МАФИЯ ДОБРА</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #b4b4b4; max-width: 42ch; text-wrap: pretty;">мы крутые и все такое</p>
+
+    </div>
+
+
+
+    <div id="squad" style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.4px;">Состав</h2>
+        <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #8a8a8a;">4 шт., все могают егора</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px;">
+
+        <div style="display: flex; flex-direction: column; gap: 12px;" style-hover="opacity: 1;">
+          <img src="dk.jpg" alt="dk" style="aspect-ratio: 1 / 1; width: 100%; object-fit: cover; object-position: 50% 22%; display: block; filter: grayscale(0.15);" style-hover="filter: none;" />
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.3px;">dk</span>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #b4b4b4; text-wrap: pretty;">Основатель (точно не лысый, но лысеет)</p>
+          </div>
+          <a href="https://www.twitch.tv/dkincc" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 700; border-top: 1px solid #2b2b2b; padding: 13px 0 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: flex-start; margin-top: auto;" style-hover="border-color: #4a9ae8;">подписаться ↗</a>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <img src="kostek.png" alt="костэк" style="aspect-ratio: 1 / 1; width: 100%; object-fit: cover; object-position: 50% 28%; display: block; filter: grayscale(0.15);" style-hover="filter: none;" />
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.3px;">костэк</span>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #b4b4b4; text-wrap: pretty;">Обладатель красивой вафли</p>
+          </div>
+          <a href="https://www.twitch.tv/koste4ek" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 700; border-top: 1px solid #2b2b2b; padding: 13px 0 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: flex-start; margin-top: auto;" style-hover="border-color: #4a9ae8;">подписаться ↗</a>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <img src="feanrir.png" alt="feanrir" style="aspect-ratio: 1 / 1; width: 100%; object-fit: cover; object-position: 50% 30%; display: block; filter: grayscale(0.15);" style-hover="filter: none;" />
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.3px;">feanrir</span>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #b4b4b4; text-wrap: pretty;">Профессионально доел</p>
+          </div>
+          <a href="https://www.twitch.tv/feanrir" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 700; border-top: 1px solid #2b2b2b; padding: 13px 0 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: flex-start; margin-top: auto;" style-hover="border-color: #4a9ae8;">подписаться ↗</a>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <img src="iscancore.png" alt="iscancore" style="aspect-ratio: 1 / 1; width: 100%; object-fit: cover; object-position: 50% 30%; display: block; filter: grayscale(0.15);" style-hover="filter: none;" />
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 19px; font-weight: 700; letter-spacing: -0.3px;">iscancore</span>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #b4b4b4; text-wrap: pretty;">Чеченец</p>
+          </div>
+          <a href="https://www.twitch.tv/iskancore" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 700; border-top: 1px solid #2b2b2b; padding: 13px 0 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: flex-start; margin-top: auto;" style-hover="border-color: #4a9ae8;">подписаться ↗</a>
+      </div>
+
+      </div>
+    </div>
+
+    <sc-if value="{{ showExtras }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid #2b2b2b; padding-top: 22px;">
+        <span style="font-size: 15px; font-weight: 700;">В комплекте</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px;">
+
+
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <pre style="font-family: 'Courier New', monospace; margin: 0; font-size: 9px; line-height: 1.1; color: #b4b4b4; flex: 0 0 40px;">  _..._
+ .'    '.
+/  o  o  \
+'._____.'
+  |   |
+  |___|</pre>
+            <span style="font-size: 13.5px; line-height: 1.5; color: #b4b4b4;">Грибы. Съедобность не проверяли.</span>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; justify-content: space-between; border-top: 1px solid #2b2b2b; padding-top: 18px;">
+      <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #8a8a8a;">MORAL SQUAD, 2026. Морали по-прежнему нет.</span>
+      <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #6e6e6e;">посетителей: 000137</span>
+    </div>
+
+  </div>
+
+  <img src="kot.jpg" alt="кот" style="position: fixed; right: 14px; bottom: 14px; width: clamp(96px, 14vw, 150px); transform: rotate(6deg); z-index: 5;" style-hover="transform: rotate(-4deg) scale(1.06);" />
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showExtras&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Блоки&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { showExtras: this.props.showExtras ?? true };
+  }
+}
+
+</script>
+</body>
+</html>
