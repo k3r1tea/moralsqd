@@ -315,153 +315,6 @@
     transform: rotate(29deg);
   }
 
-  .petition {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(210px, 280px);
-    gap: clamp(24px, 5vw, 52px);
-    align-items: center;
-    padding: clamp(26px, 5vw, 44px);
-    border: 3px solid var(--line);
-    border-radius: 29px 36px 27px 39px;
-    background: var(--lavender);
-    box-shadow: 8px 10px 0 rgba(47, 67, 72, 0.13);
-    position: relative;
-    transform: rotate(-0.25deg);
-  }
-
-  .petition::before {
-    content: "";
-    width: 90px;
-    height: 24px;
-    position: absolute;
-    left: 10%;
-    top: -15px;
-    background: rgba(255, 253, 246, 0.7);
-    transform: rotate(-3deg);
-  }
-
-  .petition-kicker {
-    display: inline-block;
-    margin-bottom: 14px;
-    padding: 7px 11px;
-    border: 2px solid var(--line);
-    border-radius: 999px;
-    background: var(--yellow);
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.045em;
-    text-transform: uppercase;
-    transform: rotate(-1deg);
-  }
-
-  .petition h2 {
-    max-width: 650px;
-    margin: 0;
-    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
-    font-size: clamp(30px, 5vw, 48px);
-    line-height: 1.07;
-    letter-spacing: -0.045em;
-    text-wrap: pretty;
-  }
-
-  .petition-disclaimer {
-    max-width: 620px;
-    margin: 16px 0 0;
-    color: #57546e;
-    font-size: 13.5px;
-    line-height: 1.55;
-    text-wrap: pretty;
-  }
-
-  .petition-action {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 18px;
-    border: 2px solid var(--line);
-    border-radius: 19px 25px 18px 23px;
-    background: var(--white);
-    box-shadow: 4px 5px 0 rgba(47, 67, 72, 0.1);
-    transform: rotate(0.7deg);
-  }
-
-  .petition-score {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .petition-score strong {
-    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
-    font-size: clamp(29px, 4vw, 39px);
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-
-  .petition-score > span {
-    color: var(--muted);
-    font-size: 11px;
-    font-weight: 800;
-    text-align: right;
-  }
-
-  .petition-meter {
-    height: 13px;
-    overflow: hidden;
-    border: 2px solid var(--line);
-    border-radius: 999px;
-    background: #eee9df;
-  }
-
-  .petition-meter-fill {
-    width: max(0%, var(--petition-progress, 0%));
-    min-width: var(--petition-progress-min, 0);
-    height: 100%;
-    border-right: 2px solid var(--line);
-    border-radius: inherit;
-    background: var(--peach);
-    transition: width 420ms ease;
-  }
-
-  .petition-button {
-    min-height: 50px;
-    border: 2px solid var(--line);
-    border-radius: 15px 19px 14px 17px;
-    background: var(--yellow);
-    color: var(--ink);
-    cursor: pointer;
-    font: 900 15px/1 "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    box-shadow: 3px 4px 0 rgba(47, 67, 72, 0.13);
-    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-  }
-
-  .petition-button:hover:not(:disabled) {
-    background: #ffe58c;
-    transform: translateY(-2px) rotate(-1deg);
-    box-shadow: 5px 6px 0 rgba(47, 67, 72, 0.13);
-  }
-
-  .petition-button:disabled {
-    cursor: default;
-    opacity: 0.68;
-  }
-
-  .petition[data-state="signed"] .petition-button {
-    background: var(--green);
-    opacity: 1;
-  }
-
-  .petition-status {
-    min-height: 2.8em;
-    margin: 0;
-    color: var(--muted);
-    font-size: 11.5px;
-    font-weight: 800;
-    line-height: 1.4;
-    text-align: center;
-  }
-
   .section {
     display: flex;
     flex-direction: column;
@@ -808,14 +661,6 @@
       right: 8%;
     }
 
-    .petition {
-      grid-template-columns: 1fr;
-    }
-
-    .petition-action {
-      width: min(100%, 390px);
-    }
-
     .members-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -858,20 +703,6 @@
 
     .hero-art {
       transform: scale(0.92);
-    }
-
-    .petition {
-      gap: 22px;
-      padding: 28px 18px 20px;
-      border-radius: 24px 29px 22px 31px;
-    }
-
-    .petition h2 {
-      font-size: 31px;
-    }
-
-    .petition-action {
-      padding: 15px;
     }
 
     .members-grid {
@@ -957,26 +788,6 @@
       <div class="hero-art" aria-label="Гриб — почётный талисман сквада">
         <div class="sun" aria-hidden="true"></div>
         <div class="mascot-sticker" aria-hidden="true">🍄</div>
-      </div>
-    </section>
-
-    <section id="dk-petition" class="petition" data-state="loading" aria-labelledby="dk-petition-title">
-      <div>
-        <span class="petition-kicker">личная инициатива для ДК</span>
-        <h2 id="dk-petition-title">Петиция: ДК смотрит «После»</h2>
-        <p class="petition-disclaimer">Петиция касается исключительно стримера ДК. Остальные участники сквада к ней отношения не имеют и могут спать спокойно.</p>
-      </div>
-
-      <div class="petition-action">
-        <div class="petition-score">
-          <strong><span data-petition-count>0</span> / <span data-petition-target>500</span></strong>
-          <span>подписей<br>собрано</span>
-        </div>
-        <div class="petition-meter" aria-hidden="true">
-          <div class="petition-meter-fill" data-petition-meter></div>
-        </div>
-        <button class="petition-button" type="button" data-petition-sign disabled>загружаем ручку...</button>
-        <p class="petition-status" data-petition-status role="status" aria-live="polite">проверяем, сколько уже подписалось</p>
       </div>
     </section>
 
@@ -1110,124 +921,6 @@ class Component extends DCLogic {
     return {};
   }
 }
-</script>
-<script>
-(() => {
-  const apiUrl = "/api/petition";
-  let requestInFlight = false;
-
-  const getPetition = () => document.querySelector("#dc-root #dk-petition");
-
-  const render = (data) => {
-    const petition = getPetition();
-    if (!petition) return;
-
-    const count = Number(data.count) || 0;
-    const target = Number(data.target) || 500;
-    const progress = target > 0 ? Math.min(100, (count / target) * 100) : 0;
-    const signed = Boolean(data.signed);
-    const canSign = data.canSign !== false;
-    const countNode = petition.querySelector("[data-petition-count]");
-    const targetNode = petition.querySelector("[data-petition-target]");
-    const meter = petition.querySelector("[data-petition-meter]");
-    const button = petition.querySelector("[data-petition-sign]");
-    const status = petition.querySelector("[data-petition-status]");
-
-    countNode.textContent = String(count);
-    targetNode.textContent = String(target);
-    meter.style.setProperty("--petition-progress", `${progress}%`);
-    meter.style.setProperty("--petition-progress-min", count > 0 ? "7px" : "0");
-    petition.dataset.state = signed ? "signed" : canSign ? "ready" : "limited";
-    button.disabled = signed || !canSign;
-    button.textContent = signed ? "подписано ✓" : canSign ? "подписать петицию" : "ручки закончились";
-
-    if (signed) {
-      status.textContent = "ваша подпись учтена. цель предусмотрительно отодвинулась";
-    } else if (!canSign) {
-      status.textContent = "с этого устройства сегодня выдали слишком много новых ручек";
-    } else if (count === 0) {
-      status.textContent = "пока никто не подписал. исторический шанс";
-    } else {
-      status.textContent = `уже подписались: ${count}. цель всё ещё убегает`;
-    }
-  };
-
-  const showError = () => {
-    const petition = getPetition();
-    if (!petition) return;
-    petition.dataset.state = "error";
-    const button = petition.querySelector("[data-petition-sign]");
-    const status = petition.querySelector("[data-petition-status]");
-    button.disabled = false;
-    button.textContent = "попробовать ещё раз";
-    button.dataset.retry = "true";
-    status.textContent = "урна временно потерялась под кроватью";
-  };
-
-  const loadPetition = async () => {
-    if (requestInFlight || !getPetition()) return;
-    requestInFlight = true;
-    try {
-      const response = await fetch(apiUrl, {
-        credentials: "same-origin",
-        cache: "no-store"
-      });
-      if (!response.ok) throw new Error(`petition load failed: ${response.status}`);
-      render(await response.json());
-    } catch {
-      showError();
-    } finally {
-      requestInFlight = false;
-    }
-  };
-
-  const signPetition = async () => {
-    const petition = getPetition();
-    if (!petition || requestInFlight) return;
-    const button = petition.querySelector("[data-petition-sign]");
-
-    if (button.dataset.retry === "true") {
-      delete button.dataset.retry;
-      button.disabled = true;
-      button.textContent = "ищем урну...";
-      await loadPetition();
-      return;
-    }
-
-    requestInFlight = true;
-    button.disabled = true;
-    button.textContent = "ставим подпись...";
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        credentials: "same-origin",
-        headers: { "Content-Type": "application/json" },
-        body: "{}"
-      });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || `petition signing failed: ${response.status}`);
-      render(data);
-    } catch {
-      showError();
-    } finally {
-      requestInFlight = false;
-    }
-  };
-
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-petition-sign]");
-    if (button) signPetition();
-  });
-
-  const observer = new MutationObserver(() => {
-    if (!getPetition()) return;
-    observer.disconnect();
-    loadPetition();
-  });
-
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-  loadPetition();
-})();
 </script>
 </body>
 </html>
