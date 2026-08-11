@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>блокнотик мелстроя</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/dk-video-inbox/dk-video-inbox.css">
+  <script src="/dk-video-inbox/dk-video-inbox.js" defer></script>
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="На главную MORAL SQUAD">
+        <span class="brand-flower" aria-hidden="true">✿</span>
+        <span>MORAL SQUAD</span>
+      </a>
+      <span class="private-label">закрытая комната</span>
+    </header>
+
+    <div class="session-check" data-session-check role="status">
+      <span class="session-check-mark" aria-hidden="true">?</span>
+      <span>проверяем вход…</span>
+    </div>
+
+    <section class="login-card" data-auth-view hidden aria-labelledby="login-title">
+      <span class="eyebrow">только для dk</span>
+      <h1 id="login-title">вход в кабинет</h1>
+      <p class="login-copy">Здесь лежит блокнотик мелстроя — список видео от зрителей.</p>
+
+      <form class="login-form" data-login-form>
+        <label for="admin-username">Логин</label>
+        <input id="admin-username" name="username" type="text" value="dk" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+
+        <label for="admin-password">Пароль</label>
+        <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+
+        <p class="form-status" data-login-status role="alert" aria-live="polite"></p>
+        <button class="button button-primary login-button" type="submit" data-login-submit>войти</button>
+      </form>
+    </section>
+
+    <section class="dashboard" data-dashboard-view hidden aria-labelledby="dashboard-title">
+      <div class="dashboard-heading">
+        <div>
+          <span class="eyebrow">входящие для dk</span>
+          <h1 id="dashboard-title">блокнотик мелстроя</h1>
+        </div>
+        <div class="dashboard-actions">
+          <button class="button" type="button" data-refresh-videos>обновить</button>
+          <button class="button button-quiet" type="button" data-logout>выйти</button>
+        </div>
+      </div>
+
+      <a class="telegram-card" href="https://t.me/DKNASASAL" target="_blank" rel="noopener noreferrer">
+        <span class="telegram-mark" aria-hidden="true">↗</span>
+        <span>
+          <strong>Telegram-канал ДК</strong>
+          <small>t.me/DKNASASAL</small>
+        </span>
+      </a>
+
+      <div class="table-meta">
+        <p class="video-count" data-video-count>загружаем список…</p>
+        <p class="updated-at" data-updated-at></p>
+      </div>
+      <p class="data-note">Просьбы собраны MORAL SQUAD, а свежесть рассчитана от даты публикации YouTube.</p>
+      <p class="dashboard-status" data-dashboard-status role="status" aria-live="polite"></p>
+
+      <div class="video-table-wrap">
+        <table class="video-table">
+          <caption class="visually-hidden">Видео из блокнотика мелстроя</caption>
+          <thead>
+            <tr>
+              <th scope="col">просьбы</th>
+              <th scope="col">свежесть</th>
+              <th scope="col">дата</th>
+              <th scope="col">название</th>
+              <th scope="col">длительность</th>
+              <th scope="col">ссылка</th>
+            </tr>
+          </thead>
+          <tbody data-video-list></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="admin-footer">
+      <a href="/privacy/">как храним данные</a>
+      <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Условия YouTube</a>
+    </footer>
+  </main>
+</body>
+</html>

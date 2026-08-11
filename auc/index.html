@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e8">
+  <meta name="color-scheme" content="light">
+  <title>Аукционы — MORAL SQUAD</title>
+  <meta name="description" content="Аукционы MORAL SQUAD: текущие варианты, принятые ставки и результат жеребьёвки.">
+  <meta name="robots" content="noindex, follow, noarchive">
+  <link rel="canonical" href="https://moralsqd.ru/auc/">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="MORAL SQUAD">
+  <meta property="og:title" content="Аукционы — MORAL SQUAD">
+  <meta property="og:description" content="Текущие варианты, принятые ставки и результат жеребьёвки MORAL SQUAD.">
+  <meta property="og:url" content="https://moralsqd.ru/auc/">
+  <meta property="og:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MORAL SQUAD — мафия добра">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Аукционы — MORAL SQUAD">
+  <meta name="twitter:description" content="Текущие варианты, принятые ставки и результат жеребьёвки MORAL SQUAD.">
+  <meta name="twitter:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <link rel="stylesheet" href="/auc/auc.css">
+</head>
+<body>
+  <main class="auction-shell">
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Вернуться на главную MORAL SQUAD">
+          <span class="brand-flower" aria-hidden="true">✿</span>
+          <span>MORAL SQUAD</span>
+        </a>
+        <span class="section-label">аукционы</span>
+        <div class="topbar-actions">
+          <span class="connection-dot" id="connection-dot" aria-hidden="true"></span>
+          <span class="connection-label" id="connection-label">подключаемся</span>
+          <button class="button button-quiet button-small" id="admin-toggle" type="button" aria-expanded="false" aria-controls="admin-panel">
+            админка
+          </button>
+        </div>
+      </header>
+
+      <div class="offline-banner" id="offline-banner" role="status" aria-live="polite" hidden>
+        Связь с сервером потеряна. Показываем последние полученные данные и пробуем подключиться снова.
+      </div>
+
+      <section class="empty-state panel" id="public-empty" aria-live="polite">
+        <span class="empty-symbol" aria-hidden="true">☁</span>
+        <p class="kicker">эфир пока спокоен</p>
+        <h1>Активного аукциона нет</h1>
+        <p>Как только модератор подготовит новый аукцион, он появится здесь автоматически.</p>
+      </section>
+
+      <div id="auction-view" hidden>
+        <section class="auction-hero panel" aria-labelledby="auction-title">
+          <div class="hero-copy">
+            <div class="hero-meta">
+              <span class="status-badge" id="auction-status">загрузка</span>
+              <span class="mode-badge" id="auction-mode">—</span>
+            </div>
+            <h1 id="auction-title">Аукцион</h1>
+            <p class="auction-description" id="auction-description"></p>
+            <p class="seed-preview" id="seed-preview" hidden>
+              Коммитмент жеребьёвки: <code id="seed-commitment"></code>
+            </p>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card timer-card">
+              <span>осталось</span>
+              <strong id="auction-timer" role="timer" aria-live="off">—</strong>
+            </div>
+            <div class="stat-card total-card">
+              <span>собрано</span>
+              <strong id="auction-total">0 ₽</strong>
+            </div>
+          </div>
+        </section>
+
+        <div class="public-grid">
+          <section class="panel options-panel" aria-labelledby="options-title">
+            <div class="panel-heading">
+              <div>
+                <p class="kicker" id="options-kicker">расклад сил</p>
+                <h2 id="options-title">Варианты</h2>
+              </div>
+              <span class="option-count" id="option-count">0 вариантов</span>
+            </div>
+            <ol class="option-list" id="option-list"></ol>
+            <p class="panel-placeholder" id="options-empty" hidden>Варианты ещё не добавлены.</p>
+          </section>
+
+          <div class="public-side">
+            <section class="panel wheel-panel" id="wheel-panel" aria-labelledby="wheel-title" hidden>
+              <div class="panel-heading compact-heading">
+                <div>
+                  <p class="kicker">вес каждого сектора честный</p>
+                  <h2 id="wheel-title">Колесо</h2>
+                </div>
+              </div>
+              <div class="wheel-stage">
+                <div class="wheel-pointer" aria-hidden="true"></div>
+                <svg id="auction-wheel" class="auction-wheel" viewBox="0 0 420 420" role="img" aria-label="Взвешенное колесо вариантов"></svg>
+              </div>
+              <p class="wheel-note">Размер сектора равен доле собранной суммы. Победителя выбирает сервер, браузер только показывает результат.</p>
+            </section>
+
+            <section class="panel contributions-panel" aria-labelledby="contributions-title">
+              <div class="panel-heading compact-heading">
+                <div>
+                  <p class="kicker">без личных данных</p>
+                  <h2 id="contributions-title">Последние ставки</h2>
+                </div>
+              </div>
+              <ul class="contribution-list" id="contribution-list"></ul>
+              <p class="panel-placeholder" id="contributions-empty">Принятых ставок пока нет.</p>
+            </section>
+          </div>
+        </div>
+
+        <section class="result-panel panel" id="result-panel" aria-labelledby="result-title" hidden>
+          <div class="winner-mark" aria-hidden="true">★</div>
+          <div class="result-copy" role="status" aria-live="polite" aria-atomic="true">
+            <p class="kicker">результат сохранён на сервере</p>
+            <h2 id="result-title">Победитель</h2>
+            <strong class="winner-name" id="winner-name">—</strong>
+            <p id="result-message"></p>
+          </div>
+          <details class="verification" id="verification-details">
+            <summary>Проверить жеребьёвку</summary>
+            <dl id="verification-list"></dl>
+            <button class="button button-quiet button-small" id="copy-verification" type="button">скопировать данные</button>
+          </details>
+        </section>
+      </div>
+
+      <section class="admin-panel panel" id="admin-panel" aria-labelledby="admin-title" hidden>
+        <div class="panel-heading admin-heading">
+          <div>
+            <p class="kicker">только для модератора</p>
+            <h2 id="admin-title" tabindex="-1">Управление аукционом</h2>
+          </div>
+          <span class="admin-session-label" id="admin-session-label">не авторизован</span>
+        </div>
+
+        <form class="login-form form-card" id="login-form">
+          <label class="field grow-field">
+            <span>Пароль администратора</span>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+          </label>
+          <button class="button button-primary" type="submit">войти</button>
+        </form>
+
+        <div id="admin-workspace" hidden>
+          <div class="admin-toolbar">
+            <p id="admin-context">Сессия активна.</p>
+            <button class="button button-quiet button-small" id="logout-button" type="button">выйти</button>
+          </div>
+
+          <div class="admin-grid">
+            <section class="form-card admin-section" aria-labelledby="auction-form-title">
+              <div class="subheading">
+                <h3 id="auction-form-title">Новый аукцион</h3>
+                <span id="auction-form-hint">один активный одновременно</span>
+              </div>
+              <form id="auction-form">
+                <label class="field">
+                  <span>Название</span>
+                  <input id="admin-auction-title" name="title" maxlength="120" required>
+                </label>
+                <label class="field">
+                  <span>Описание или правила</span>
+                  <textarea id="admin-auction-description" name="description" maxlength="2000" rows="4"></textarea>
+                </label>
+                <div class="field-row">
+                  <label class="field">
+                    <span>Режим</span>
+                    <select id="admin-auction-mode" name="mode">
+                      <option value="leader">Лидерный аукцион</option>
+                      <option value="weighted-wheel">Взвешенное колесо</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>Длительность, минут</span>
+                    <input id="admin-auction-duration" name="durationMinutes" type="number" min="1" max="1440" step="1" value="10" required>
+                  </label>
+                </div>
+                <button class="button button-primary" id="auction-submit" type="submit">создать черновик</button>
+              </form>
+            </section>
+
+            <section class="form-card admin-section" id="options-admin-section" aria-labelledby="admin-options-title">
+              <div class="subheading">
+                <h3 id="admin-options-title">Варианты</h3>
+                <span>меняются до запуска</span>
+              </div>
+              <form class="inline-form" id="add-option-form">
+                <label class="field grow-field">
+                  <span>Новый вариант</span>
+                  <input id="new-option-name" name="name" maxlength="120" required>
+                </label>
+                <button class="button button-secondary" type="submit">добавить</button>
+              </form>
+              <ul class="admin-option-list" id="admin-option-list"></ul>
+              <p class="panel-placeholder" id="admin-options-empty">Сначала создайте черновик.</p>
+            </section>
+
+            <section class="form-card admin-section" id="contribution-admin-section" aria-labelledby="manual-contribution-title">
+              <div class="subheading">
+                <h3 id="manual-contribution-title">Ручная ставка</h3>
+                <span>только пока аукцион идёт</span>
+              </div>
+              <form id="contribution-form">
+                <label class="field">
+                  <span>Вариант</span>
+                  <select id="contribution-option" name="optionId" required>
+                    <option value="" selected disabled>Выберите вариант</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Сумма в рублях</span>
+                  <input id="contribution-amount" name="amount" inputmode="decimal" placeholder="1000,50" autocomplete="off" required>
+                  <small>Копейки можно указать через запятую или точку.</small>
+                </label>
+                <button class="button button-primary" type="submit">принять ставку</button>
+              </form>
+              <div class="admin-contributions">
+                <h4>Записи</h4>
+                <ul id="admin-contribution-list"></ul>
+                <p class="panel-placeholder" id="admin-contributions-empty">Записей пока нет.</p>
+                <button class="button button-small button-secondary" id="load-more-contributions" type="button" hidden>
+                  показать ещё
+                </button>
+              </div>
+            </section>
+
+            <section class="form-card admin-section" aria-labelledby="actions-title">
+              <div class="subheading">
+                <h3 id="actions-title">Состояние</h3>
+                <span id="admin-state-label">нет аукциона</span>
+              </div>
+              <div class="action-buttons">
+                <button class="button button-success" id="start-button" type="button">запустить</button>
+                <button class="button button-warning" id="close-button" type="button">закрыть досрочно</button>
+              </div>
+              <label class="field">
+                <span>Причина отмены</span>
+                <textarea id="cancel-reason" rows="3" maxlength="500"></textarea>
+              </label>
+              <button class="button button-danger" id="cancel-button" type="button">отменить аукцион</button>
+
+              <div class="dispute-box">
+                <h4>Разрешить спорную ситуацию</h4>
+                <label class="field">
+                  <span>Победитель</span>
+                  <select id="dispute-option"></select>
+                </label>
+                <label class="field">
+                  <span>Обязательная причина</span>
+                  <textarea id="dispute-reason" rows="3" maxlength="500"></textarea>
+                </label>
+                <button class="button button-danger-outline" id="dispute-button" type="button">зафиксировать вручную</button>
+              </div>
+            </section>
+          </div>
+
+          <section class="form-card audit-section" aria-labelledby="audit-title">
+            <div class="subheading">
+              <h3 id="audit-title">Журнал действий</h3>
+              <button class="button button-quiet button-small" id="refresh-audit" type="button">обновить</button>
+            </div>
+            <ol class="audit-list" id="audit-list"></ol>
+            <p class="panel-placeholder" id="audit-empty">Событий пока нет.</p>
+          </section>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a href="/">← на главную</a>
+        <span>сервер решает, колесо показывает</span>
+      </footer>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script defer src="/auc/wheel.js"></script>
+  <script defer src="/auc/auc.js"></script>
+</body>
+</html>

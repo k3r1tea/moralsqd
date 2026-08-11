@@ -4,13 +4,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff8e8">
-  <title>мафия добра</title>
-  <link rel="icon" type="image/png" sizes="28x28" href="/favicon.png">
-  <script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+  <meta name="color-scheme" content="light">
+  <title>MORAL SQUAD (Морал Сквад) — мафия добра</title>
+  <meta name="description" content="Официальный сайт MORAL SQUAD (Морал Сквад, moralsqd): состав команды, правила, Twitch, Telegram и стрим-аукционы.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://moralsqd.ru/">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="MORAL SQUAD">
+  <meta property="og:title" content="MORAL SQUAD (Морал Сквад) — мафия добра">
+  <meta property="og:description" content="Состав MORAL SQUAD, ссылки участников, правила группы «Бобрята» и стрим-аукционы.">
+  <meta property="og:url" content="https://moralsqd.ru/">
+  <meta property="og:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <meta property="og:image:secure_url" content="https://moralsqd.ru/og-moral-squad.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MORAL SQUAD — мафия добра">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MORAL SQUAD (Морал Сквад) — мафия добра">
+  <meta name="twitter:description" content="Состав MORAL SQUAD, ссылки участников, правила группы «Бобрята» и стрим-аукционы.">
+  <meta name="twitter:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <meta name="twitter:image:alt" content="MORAL SQUAD — мафия добра">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://moralsqd.ru/#website",
+        "url": "https://moralsqd.ru/",
+        "name": "MORAL SQUAD",
+        "alternateName": ["Морал Сквад", "moralsqd", "MORAL SQD"],
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://moralsqd.ru/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://moralsqd.ru/#organization",
+        "url": "https://moralsqd.ru/",
+        "name": "MORAL SQUAD",
+        "alternateName": ["Морал Сквад", "moralsqd", "MORAL SQD"],
+        "description": "Интернет-сообщество «Мафия добра».",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://moralsqd.ru/icon-512.png",
+          "width": 512,
+          "height": 512
+        }
+      }
+    ]
+  }
+  </script>
 <style>
   :root {
     --ink: #28373b;
@@ -116,6 +167,7 @@
     font-size: 14px;
     font-weight: 900;
     letter-spacing: 0.04em;
+    text-decoration: none;
     white-space: nowrap;
   }
 
@@ -219,9 +271,20 @@
     text-shadow: 4px 4px 0 rgba(255, 182, 159, 0.5);
   }
 
+  .hero-tagline {
+    margin: 22px 0 0 6px;
+    color: var(--blue-dark);
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    transform: rotate(-1deg);
+  }
+
   .hero-note {
     max-width: 510px;
-    margin: 34px 0 0;
+    margin: 24px 0 0;
     padding: 22px 24px 20px;
     position: relative;
     border: 2px solid var(--line);
@@ -346,6 +409,218 @@
     transform: rotate(2deg);
   }
 
+  .news-board {
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+    align-items: center;
+    gap: clamp(28px, 6vw, 64px);
+    padding: clamp(30px, 6vw, 58px);
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    border: 3px solid var(--line);
+    border-radius: 31px 24px 39px 27px;
+    background:
+      radial-gradient(circle at 18px 18px, rgba(47, 67, 72, 0.09) 2px, transparent 2.5px) 0 0 / 36px 36px,
+      linear-gradient(135deg, #e5f3f6 0%, #eee9f8 54%, #fff0c6 100%);
+    box-shadow: 9px 11px 0 rgba(47, 67, 72, 0.12);
+  }
+
+  .news-board::before {
+    content: "";
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    left: -92px;
+    bottom: -118px;
+    z-index: -1;
+    border: 3px solid rgba(47, 67, 72, 0.13);
+    border-radius: 50%;
+    background: rgba(255, 182, 159, 0.34);
+  }
+
+  .news-board::after {
+    content: "✦";
+    position: absolute;
+    right: 34%;
+    top: 24px;
+    color: #e47760;
+    font-size: 28px;
+    transform: rotate(12deg);
+  }
+
+  .news-copy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .news-kicker {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 7px 12px;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--green);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transform: rotate(-1deg);
+  }
+
+  .news-board h3 {
+    max-width: 590px;
+    margin: 0;
+    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+  }
+
+  .news-board p {
+    max-width: 590px;
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .news-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+  }
+
+  .news-topics span {
+    padding: 7px 10px;
+    border: 2px solid rgba(47, 67, 72, 0.72);
+    border-radius: 10px 13px 9px 12px;
+    background: var(--white);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .news-topics span:nth-child(2) {
+    background: #fff3c7;
+    transform: rotate(1deg);
+  }
+
+  .news-topics span:nth-child(3) {
+    background: #f8e2dc;
+    transform: rotate(-1deg);
+  }
+
+  .news-visual {
+    min-height: 230px;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+
+  .news-paper {
+    width: min(100%, 230px);
+    aspect-ratio: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 22px 20px;
+    position: relative;
+    border: 3px solid var(--line);
+    border-radius: 13px 18px 11px 16px;
+    background: var(--white);
+    box-shadow: 7px 9px 0 rgba(47, 67, 72, 0.14);
+    transform: rotate(4deg);
+    transition: transform 180ms ease;
+  }
+
+  .news-board:hover .news-paper {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+
+  .news-paper::before {
+    content: "";
+    width: 84px;
+    height: 22px;
+    position: absolute;
+    left: 50%;
+    top: -13px;
+    background: rgba(255, 217, 106, 0.78);
+    transform: translateX(-50%) rotate(-3deg);
+  }
+
+  .news-paper-title {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--line);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .news-paper-mark {
+    margin-top: 8px;
+    color: var(--blue-dark);
+    font-family: "Comic Sans MS", cursive;
+    font-size: 86px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 4px 4px 0 rgba(169, 221, 234, 0.55);
+    transform: rotate(-5deg);
+  }
+
+  .news-paper-lines {
+    width: 78%;
+    height: 43px;
+    margin-top: auto;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(47, 67, 72, 0.45) 0 3px,
+      transparent 3px 13px
+    );
+  }
+
+  .news-paper-note {
+    position: absolute;
+    right: -18px;
+    bottom: 24px;
+    padding: 8px 11px;
+    border: 2px solid var(--line);
+    border-radius: 10px 13px 9px 12px;
+    background: var(--peach);
+    font-family: "Comic Sans MS", cursive;
+    font-size: 14px;
+    font-weight: 900;
+    transform: rotate(-8deg);
+  }
+
+  .news-spark {
+    position: absolute;
+    color: var(--blue-dark);
+    font-family: "Comic Sans MS", cursive;
+    font-size: 28px;
+    font-weight: 900;
+  }
+
+  .news-spark-one {
+    left: 0;
+    top: 13%;
+    transform: rotate(-10deg);
+  }
+
+  .news-spark-two {
+    right: -2px;
+    bottom: 10%;
+    color: #e47760;
+    transform: rotate(9deg);
+  }
+
   .members-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -413,6 +688,7 @@
   .portrait {
     aspect-ratio: 1 / 1;
     width: 100%;
+    height: auto;
     display: block;
     border: 2px solid var(--line);
     border-radius: 18px 12px 20px 14px;
@@ -436,6 +712,7 @@
   }
 
   .member-name {
+    margin: 0;
     font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
     font-size: 22px;
     font-weight: 900;
@@ -487,6 +764,269 @@
   .member-link:hover {
     background: var(--yellow);
     transform: rotate(-1deg);
+  }
+
+  .member-link-button {
+    width: 100%;
+    appearance: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .member-link-button::after {
+    content: "+";
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .member-action-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  .member-link-button:focus-visible,
+  .video-suggestion-dialog button:focus-visible,
+  .video-suggestion-dialog input:focus-visible {
+    outline: 4px solid rgba(85, 148, 165, 0.38);
+    outline-offset: 3px;
+  }
+
+  .video-suggestion-dialog {
+    width: min(calc(100% - 28px), 530px);
+    max-height: calc(100dvh - 28px);
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    border-radius: 30px 23px 34px 26px;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .video-suggestion-dialog::backdrop {
+    background: rgba(40, 55, 59, 0.62);
+    backdrop-filter: blur(3px);
+  }
+
+  .video-suggestion-card {
+    max-height: calc(100dvh - 28px);
+    padding: clamp(25px, 6vw, 39px);
+    overflow-y: auto;
+    position: relative;
+    border: 3px solid var(--line);
+    border-radius: inherit;
+    background:
+      radial-gradient(circle at 16px 16px, rgba(85, 148, 165, 0.09) 2px, transparent 2.5px) 0 0 / 32px 32px,
+      var(--white);
+    box-shadow: 9px 11px 0 rgba(20, 30, 33, 0.28);
+  }
+
+  .video-suggestion-card::before {
+    content: "";
+    width: 91px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    background: rgba(255, 217, 106, 0.86);
+    transform: translateX(-50%) rotate(-2deg);
+    pointer-events: none;
+  }
+
+  .video-suggestion-close {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: 16px;
+    top: 15px;
+    padding: 0 0 3px;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper);
+    color: inherit;
+    font: inherit;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .video-suggestion-close:hover:not(:disabled) {
+    background: var(--peach);
+    transform: rotate(5deg);
+  }
+
+  .video-suggestion-close:disabled {
+    cursor: wait;
+    opacity: 0.58;
+    transform: none;
+  }
+
+  .video-suggestion-kicker {
+    display: inline-block;
+    margin-bottom: 11px;
+    padding: 6px 10px;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transform: rotate(-1deg);
+  }
+
+  .video-suggestion-card h2 {
+    max-width: calc(100% - 45px);
+    margin: 0;
+    font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
+    font-size: clamp(29px, 8vw, 42px);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .video-suggestion-intro {
+    margin: 13px 0 23px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .video-suggestion-form {
+    display: grid;
+    gap: 9px;
+  }
+
+  .video-suggestion-form label {
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .video-suggestion-form input[type="url"] {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 14px;
+    border: 2px solid var(--line);
+    border-radius: 13px 17px 12px 16px;
+    background: #fff;
+    color: var(--ink);
+    font: 16px/1.35 "Trebuchet MS", Arial, sans-serif;
+    box-shadow: 3px 4px 0 rgba(47, 67, 72, 0.1);
+  }
+
+  .video-suggestion-form input[type="url"][aria-invalid="true"] {
+    border-color: #a43d31;
+    background: #fff8f5;
+  }
+
+  .video-suggestion-hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .video-suggestion-consent {
+    display: grid;
+    grid-template-columns: 21px 1fr;
+    align-items: start;
+    gap: 9px;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .video-suggestion-consent input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--blue-dark);
+    cursor: pointer;
+  }
+
+  .video-suggestion-consent a,
+  .video-suggestion-privacy {
+    color: #24798e;
+    font-weight: 900;
+    text-underline-offset: 3px;
+  }
+
+  .video-suggestion-status {
+    min-height: 22px;
+    margin: 5px 0 0;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.45;
+  }
+
+  .video-suggestion-status:empty {
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .video-suggestion-status[data-state="loading"] {
+    color: var(--blue-dark);
+  }
+
+  .video-suggestion-status[data-state="success"] {
+    color: #39722b;
+  }
+
+  .video-suggestion-status[data-state="error"] {
+    color: #9c352a;
+  }
+
+  .video-suggestion-actions {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 10px;
+  }
+
+  .video-suggestion-action {
+    min-height: 44px;
+    padding: 9px 16px;
+    border: 2px solid var(--line);
+    border-radius: 12px 15px 11px 14px;
+    background: var(--paper);
+    color: inherit;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .video-suggestion-action:hover:not(:disabled) {
+    background: var(--yellow);
+    transform: rotate(-1deg);
+  }
+
+  .video-suggestion-action-primary {
+    background: var(--green);
+  }
+
+  .video-suggestion-action:disabled {
+    cursor: wait;
+    opacity: 0.64;
+  }
+
+  body:has(.video-suggestion-dialog[open]) {
+    overflow: hidden;
   }
 
   .former-wrap {
@@ -624,8 +1164,13 @@
     transform: rotate(-2deg);
   }
 
+  .footer-privacy {
+    text-underline-offset: 3px;
+  }
+
   .cat-sticker {
     width: clamp(92px, 12vw, 138px);
+    height: auto;
     position: fixed;
     right: 16px;
     bottom: 14px;
@@ -710,6 +1255,31 @@
       gap: 26px;
     }
 
+    .news-board {
+      min-height: 0;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 30px 20px 24px;
+    }
+
+    .news-board::after {
+      right: 20px;
+      top: 20px;
+    }
+
+    .news-visual {
+      min-height: 205px;
+    }
+
+    .news-paper {
+      width: 190px;
+      padding: 20px 18px 17px;
+    }
+
+    .news-paper-mark {
+      font-size: 72px;
+    }
+
     .member-card {
       width: min(100%, 380px);
       margin-inline: auto;
@@ -750,6 +1320,12 @@
     }
   }
 
+  @media (max-width: 360px) {
+    .brand > span:last-child {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -762,32 +1338,79 @@
     }
   }
 </style>
-</helmet>
+</head>
+<body>
+<!-- Yandex.Metrika counter -->
+<script>
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111498714', 'ym');
 
-<main class="site-shell">
+    ym(111498714, 'init', {ssr:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111498714" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<main id="dc-root" class="site-shell">
   <div class="page">
     <header class="topbar">
-      <div class="brand">
+      <a class="brand" href="/" aria-label="MORAL SQUAD — главная">
         <span class="brand-flower" aria-hidden="true">✿</span>
         <span>MORAL SQUAD</span>
-      </div>
+      </a>
       <span class="group-label">группа «Бобрята»</span>
       <nav class="nav" aria-label="Навигация">
         <a href="#squad">состав</a>
         <a href="#constitution">правила</a>
+        <a href="/auc/">аукцион</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" aria-labelledby="main-title">
       <div class="hero-copy">
         <span class="eyebrow">на обед рисовая каша</span>
-        <h1><span>Мафия</span><span>добра</span></h1>
-        <p class="hero-note">мы крутые. а еще представьте вы в бэкрумс и за вами гонятся ОНИ</p>
+        <h1 id="main-title"><span>MORAL</span> <span>SQUAD</span></h1>
+        <p class="hero-tagline">мафия добра</p>
+        <p class="hero-note">мы — «Морал Сквад», а коротко — moralsqd. мы крутые. а еще представьте вы в бэкрумс и за вами гонятся ОНИ</p>
       </div>
 
-      <div class="hero-art" aria-label="Гриб — почётный талисман сквада">
+      <div class="hero-art" role="img" aria-label="Гриб — почётный талисман MORAL SQUAD">
         <div class="sun" aria-hidden="true"></div>
         <div class="mascot-sticker" aria-hidden="true">🍄</div>
+      </div>
+    </section>
+
+    <section id="news" class="section news-section">
+      <div class="section-heading">
+        <h2>Новости</h2>
+        <span class="section-count">пока тихо</span>
+      </div>
+
+      <div class="news-board">
+        <div class="news-copy">
+          <span class="news-kicker">редакция собирает инфоповоды</span>
+          <h3>Здесь скоро будут новости</h3>
+          <p>Анонсы, события и всё важное из жизни сквада соберём в одном месте. Пока без выдуманных сенсаций — место уже готово.</p>
+          <div class="news-topics" role="list" aria-label="Будущие рубрики">
+            <span role="listitem">анонсы</span>
+            <span role="listitem">события</span>
+            <span role="listitem">всякое важное</span>
+          </div>
+        </div>
+
+        <div class="news-visual" aria-hidden="true">
+          <div class="news-paper">
+            <span class="news-paper-title">свежий выпуск</span>
+            <span class="news-paper-mark">?</span>
+            <span class="news-paper-lines"></span>
+            <span class="news-paper-note">скоро!</span>
+          </div>
+          <span class="news-spark news-spark-one">✦</span>
+          <span class="news-spark news-spark-two">✦</span>
+        </div>
       </div>
     </section>
 
@@ -798,21 +1421,22 @@
 
       <div class="members-grid">
         <article class="member-card">
-          <img class="portrait" src="dk.jpg" alt="dk" style="object-position: 50% 22%;">
+          <img class="portrait" src="dk.jpg" alt="DK — основатель MORAL SQUAD" width="1280" height="1026" loading="lazy" decoding="async" style="object-position: 50% 22%;">
           <div class="member-copy">
-            <span class="member-name">dk</span>
+            <h3 class="member-name">dk</h3>
             <p class="member-role">Основатель (точно не лысый, но лысеет)</p>
           </div>
           <div class="member-links">
             <a class="member-link" href="https://www.twitch.tv/dkincc" target="_blank" rel="noopener noreferrer"><img class="member-link-icon" src="twitch.svg" alt="" aria-hidden="true">твич</a>
             <a class="member-link" href="https://t.me/DKNASASAL" target="_blank" rel="noopener noreferrer"><img class="member-link-icon" src="telegram.svg" alt="" aria-hidden="true">тг</a>
+            <button class="member-link member-link-button" type="button" data-video-suggestion-open><span class="member-action-icon" aria-hidden="true">▶</span>предложить видос</button>
           </div>
         </article>
 
         <article class="member-card">
-          <img class="portrait" src="kostek.png" alt="костэк" style="object-position: 50% 28%;">
+          <img class="portrait" src="kostek.png" alt="Костэк — участник MORAL SQUAD" width="703" height="794" loading="lazy" decoding="async" style="object-position: 50% 28%;">
           <div class="member-copy">
-            <span class="member-name">костэк</span>
+            <h3 class="member-name">костэк</h3>
             <p class="member-role">Обладатель красивой вафли</p>
           </div>
           <div class="member-links">
@@ -822,9 +1446,9 @@
         </article>
 
         <article class="member-card">
-          <img class="portrait" src="feanrir.png" alt="feanrir" style="object-position: 50% 30%;">
+          <img class="portrait" src="feanrir.png" alt="Feanrir — участник MORAL SQUAD" width="184" height="170" loading="lazy" decoding="async" style="object-position: 50% 30%;">
           <div class="member-copy">
-            <span class="member-name">feanrir</span>
+            <h3 class="member-name">feanrir</h3>
             <p class="member-role">Профессионально доел</p>
           </div>
           <div class="member-links">
@@ -834,9 +1458,9 @@
         </article>
 
         <article class="member-card">
-          <img class="portrait" src="iscancore.png" alt="iscancore" style="object-position: 50% 30%;">
+          <img class="portrait" src="iscancore.png" alt="Iscancore — участник MORAL SQUAD" width="70" height="70" loading="lazy" decoding="async" style="object-position: 50% 30%;">
           <div class="member-copy">
-            <span class="member-name">iscancore</span>
+            <h3 class="member-name">iscancore</h3>
             <p class="member-role">Чеченец</p>
           </div>
           <div class="member-links">
@@ -846,9 +1470,9 @@
         </article>
 
         <article class="member-card">
-          <img class="portrait" src="katya.jpg" alt="Катя" style="object-position: 50% 50%;">
+          <img class="portrait" src="katya.jpg" alt="Катя — участница MORAL SQUAD" width="1021" height="1280" loading="lazy" decoding="async" style="object-position: 50% 50%;">
           <div class="member-copy">
-            <span class="member-name">Катя</span>
+            <h3 class="member-name">Катя</h3>
             <p class="member-role">👑 королева 👑</p>
           </div>
           <div class="member-links">
@@ -867,9 +1491,9 @@
 
       <div class="members-grid">
         <article class="member-card">
-          <img class="portrait" src="frametamer.png" alt="фраметамер" style="object-position: 50% 35%;">
+          <img class="portrait" src="frametamer.png" alt="Фраметамер — бывший участник MORAL SQUAD" width="205" height="312" loading="lazy" decoding="async" style="object-position: 50% 35%;">
           <div class="member-copy">
-            <span class="member-name">фраметамер</span>
+            <h3 class="member-name">фраметамер</h3>
             <p class="member-role">всё сказал?</p>
           </div>
         </article>
@@ -908,19 +1532,38 @@
 
     <footer class="footer">
       <span class="footer-mark">сделано на тихом часу</span>
+      <a class="footer-privacy" href="/privacy/">как храним данные</a>
     </footer>
   </div>
 
-  <img class="cat-sticker" src="kot.jpg" alt="кот — строгий воспитатель">
+  <img class="cat-sticker" src="kot.jpg" alt="Кот — строгий воспитатель MORAL SQUAD" width="1280" height="1280" decoding="async">
 </main>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {};
-  }
-}
-</script>
+<dialog class="video-suggestion-dialog" data-video-suggestion-dialog aria-labelledby="video-suggestion-title">
+  <div class="video-suggestion-card">
+    <button class="video-suggestion-close" type="button" data-video-suggestion-close aria-label="Закрыть окно">×</button>
+    <span class="video-suggestion-kicker">для dk</span>
+    <h2 id="video-suggestion-title">предложить видос</h2>
+    <p class="video-suggestion-intro">Отправь ссылку на конкретное видео YouTube. Один и тот же видос можно предложить только один раз, а другие — отдельно.</p>
+
+    <form class="video-suggestion-form" data-video-suggestion-form novalidate>
+      <label for="video-suggestion-url">Ссылка на YouTube</label>
+      <input id="video-suggestion-url" name="url" type="url" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" maxlength="2048" required aria-describedby="video-suggestion-hint video-suggestion-status">
+      <p class="video-suggestion-hint" id="video-suggestion-hint">Подойдут ссылки youtube.com и youtu.be на обычные видео, Shorts и завершённые трансляции.</p>
+      <label class="video-suggestion-consent">
+        <input name="policyAccepted" type="checkbox" value="true" required data-video-suggestion-consent>
+        <span>Я согласен с <a href="/privacy/">политикой конфиденциальности</a> и <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Условиями YouTube</a>.</span>
+      </label>
+      <p class="video-suggestion-status" id="video-suggestion-status" data-video-suggestion-status role="status" aria-live="polite"></p>
+
+      <div class="video-suggestion-actions">
+        <button class="video-suggestion-action" type="button" data-video-suggestion-close>отмена</button>
+        <button class="video-suggestion-action video-suggestion-action-primary" type="submit" data-video-suggestion-submit disabled>отправить</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+<script src="./video-suggestions.js" defer></script>
 </body>
 </html>

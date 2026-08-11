@@ -1,0 +1,12 @@
+[Unit]
+Description=Run MORAL SQUAD YouTube metadata maintenance twice daily
+
+[Timer]
+OnCalendar=*-*-* 03:17:00
+OnCalendar=*-*-* 15:17:00
+RandomizedDelaySec=30m
+Persistent=true
+Unit=moralsqd-video-suggestions-maintenance.service
+
+[Install]
+WantedBy=timers.target

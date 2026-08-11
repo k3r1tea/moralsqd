@@ -3,6 +3,9 @@
 *.db
 *.db-shm
 *.db-wal
+.env
+.env.*
+!.env.example
 __pycache__/
 .idea/
 .vscode/

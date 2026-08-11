@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "MORAL SQUAD",
+  "short_name": "MORALSQD",
+  "description": "Официальный сайт MORAL SQUAD — мафии добра.",
+  "lang": "ru",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#fff8e8",
+  "theme_color": "#fff8e8",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

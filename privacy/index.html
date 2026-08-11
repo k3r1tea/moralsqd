@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e8">
+  <title>Как храним данные — MORAL SQUAD</title>
+  <meta name="description" content="Правила хранения анонимных данных, cookie, метаданных YouTube и работы Яндекс Метрики на сайте MORAL SQUAD.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://moralsqd.ru/privacy/">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="MORAL SQUAD">
+  <meta property="og:title" content="Как храним данные — MORAL SQUAD">
+  <meta property="og:description" content="Правила хранения анонимных данных, cookie, метаданных YouTube и работы Метрики.">
+  <meta property="og:url" content="https://moralsqd.ru/privacy/">
+  <meta property="og:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MORAL SQUAD — мафия добра">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Как храним данные — MORAL SQUAD">
+  <meta name="twitter:description" content="Правила хранения анонимных данных, cookie, метаданных YouTube и работы Метрики.">
+  <meta name="twitter:image" content="https://moralsqd.ru/og-moral-squad.png">
+  <style>
+    :root {
+      --ink: #28373b;
+      --muted: #617176;
+      --paper: #fff8e8;
+      --white: #fffdf6;
+      --blue: #a9ddea;
+      --yellow: #ffd96a;
+      --green: #b9dfa5;
+      --line: #2f4348;
+      --shadow: 7px 9px 0 rgba(47, 67, 72, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 28px 18px 64px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14px 14px, rgba(85, 148, 165, 0.1) 2px, transparent 2.5px) 0 0 / 34px 34px,
+        var(--paper);
+      font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 4px solid rgba(85, 148, 165, 0.38);
+      outline-offset: 4px;
+    }
+
+    .page {
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 9px 13px;
+      border: 2px solid var(--line);
+      border-radius: 13px 16px 12px 15px;
+      background: var(--white);
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 3px 4px 0 rgba(47, 67, 72, 0.1);
+    }
+
+    .card {
+      margin-top: 28px;
+      padding: clamp(26px, 6vw, 52px);
+      border: 3px solid var(--line);
+      border-radius: 31px 24px 39px 27px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transform: rotate(-1deg);
+    }
+
+    h1,
+    h2 {
+      font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive;
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      font-size: clamp(38px, 8vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    h2 {
+      margin: 32px 0 10px;
+      font-size: 24px;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 16px 18px;
+      border: 2px dashed rgba(47, 67, 72, 0.55);
+      border-radius: 16px 20px 14px 22px;
+      background: #fff3c7;
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+
+    .delete-button {
+      display: inline-flex;
+      min-height: 44px;
+      margin-top: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      border: 2px solid var(--line);
+      border-radius: 13px 16px 12px 15px;
+      color: var(--ink);
+      background: var(--white);
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 3px 4px 0 rgba(47, 67, 72, 0.1);
+    }
+
+    .delete-button:disabled {
+      cursor: wait;
+      opacity: 0.65;
+    }
+
+    .delete-status {
+      min-height: 1.65em;
+      margin: 10px 0 0;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding-inline: 12px;
+      }
+
+      .card {
+        padding: 25px 20px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back-link" href="/">← на главную</a>
+
+    <article class="card">
+      <span class="kicker">без лишних анкет, с понятной аналитикой</span>
+      <h1>Как храним данные</h1>
+      <p>Эта страница объясняет, как работает аналитика главной страницы и что происходит, когда посетитель предлагает ДК видео с YouTube.</p>
+      <p>Отправляя ссылку через эту функцию, посетитель соглашается с этой политикой и <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Условиями использования YouTube</a>.</p>
+      <p>Актуально на 11 августа 2026 года.</p>
+
+      <h2>Что сохраняется</h2>
+      <ul>
+        <li>идентификатор и каноническая ссылка предложенного YouTube-видео;</li>
+        <li>дата предложения и случайный анонимный идентификатор браузера в виде необратимого хеша;</li>
+        <li>отдельная серверная запись действующего хеша с датами создания, последнего обращения и фиксированного истечения — не более 401 дня от выдачи;</li>
+        <li>название, дата публикации и длительность, полученные через YouTube Data API;</li>
+        <li>технический HMAC-хеш подсети только для ограничения спама; записи лимитов удаляются не позднее чем через 8 дней.</li>
+      </ul>
+
+      <h2>Что не сохраняется</h2>
+      <p>Мы не просим имя, почту, телефон или аккаунт YouTube. База предложений не сохраняет сырой IP-адрес: он преобразуется в необратимый технический HMAC-хеш для антиспама. Для маршрутов этой функции access-лог nginx отключён, а backend не записывает IP в свои логи. Общий веб-сервер может обрабатывать IP при загрузке других страниц по своей эксплуатационной политике. Cookie функции предложений содержит только случайный подписанный идентификатор, не доступна JavaScript и хранится до 400 дней или до удаления данных через форму ниже.</p>
+
+      <h2>Зачем это нужно</h2>
+      <p>Анонимный идентификатор не позволяет одному браузеру повторно увеличить число просьб за один и тот же ролик. Метаданные нужны, чтобы ДК видел название, длительность и свежесть видео.</p>
+      <p>Чтобы две вкладки одного браузера не выдали два идентификатора одновременно, браузер использует встроенную межвкладочную блокировку. В старых браузерах вместо неё в localStorage временно хранятся случайный токен блокировки и время его истечения. Эта запись не отправляется на сервер, удаляется сразу после отправки, а при сбое перестаёт действовать через 60 секунд.</p>
+
+      <h2>Яндекс Метрика</h2>
+      <p>На главной странице работает счётчик Яндекс Метрики № 111498714. Он передаёт Яндексу адрес открытой страницы, источник перехода, технические сведения о браузере и устройстве, а также данные о просмотрах, кликах и переходах по ссылкам. Для различения посещений Метрика может использовать cookie и localStorage.</p>
+      <p>Эти данные нужны для общей статистики посещаемости и понимания того, какими разделами сайта пользуются. Обработка данных выполняется Яндексом по его <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Политике конфиденциальности</a>. Подробности о собираемых данных и <a href="https://yandex.ru/support/metrica/ru/general/cookie-usage" target="_blank" rel="noopener noreferrer">cookie Метрики</a> опубликованы в документации Яндекса. Ограничить сбор можно с помощью <a href="https://yandex.ru/support/metrica/ru/general/user-opt-out" target="_blank" rel="noopener noreferrer">официального блокировщика Яндекс Метрики</a>. Кнопка удаления ниже относится только к предложениям видео и не удаляет данные, уже переданные Яндексу.</p>
+
+      <h2>YouTube и срок хранения</h2>
+      <p>Идентификатор видео отправляется в YouTube Data API, чтобы получить название, дату публикации и длительность. Метаданные видео обновляются или удаляются не позднее чем через 30 дней после предыдущего получения. Серверная запись действующего хеша не продлевается при отправках и удаляется не позднее 401-го дня от выдачи. Предложения и их анонимные счётчики хранятся, пока работает сервис или пока посетитель не удалит их.</p>
+      <p>Функция использует <a href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener noreferrer">YouTube Data API</a>. Также действуют <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Условия использования YouTube</a> и <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Политика конфиденциальности Google</a>. Сервис не использует Google OAuth и не получает авторизованные данные YouTube; другими подключениями Google можно управлять на <a href="https://security.google.com/settings/security/permissions" target="_blank" rel="noopener noreferrer">странице разрешений Google</a>.</p>
+
+      <div class="note">
+        <p><strong>Удаление данных.</strong> Кнопка удалит все просьбы, связанные с анонимной cookie этого браузера, и саму cookie. Если видео предлагали другие люди, их просьбы и общие метаданные останутся. Удаление возможно только в том браузере, где ещё сохранена cookie.</p>
+        <button class="delete-button" type="button" data-delete-video-suggestions>Удалить мои предложения</button>
+        <p class="delete-status" data-delete-video-suggestions-status role="status" aria-live="polite"></p>
+      </div>
+    </article>
+  </main>
+  <script src="/privacy/privacy.js" defer></script>
+</body>
+</html>

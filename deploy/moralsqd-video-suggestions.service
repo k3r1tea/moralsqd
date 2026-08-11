@@ -1,0 +1,38 @@
+[Unit]
+Description=MORAL SQUAD video suggestions API
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=moralsqd-video-suggestions
+Group=moralsqd-video-suggestions
+WorkingDirectory=/opt/moralsqd
+EnvironmentFile=/etc/moralsqd-video-suggestions.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 /opt/moralsqd/video_suggestions_api.py --host 127.0.0.1 --port 8790
+Restart=on-failure
+RestartSec=3
+UMask=0077
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+ReadOnlyPaths=/opt/moralsqd /var/www/moralsqd
+ReadWritePaths=/var/lib/moralsqd-video-suggestions
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target
