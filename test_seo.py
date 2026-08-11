@@ -96,8 +96,9 @@ class SeoContractTests(unittest.TestCase):
         self.assertEqual(page.canonicals, ["https://moralsqd.ru/"])
         self.assertIn("MORAL SQUAD", "".join(page.h1_text))
         visible_text = " ".join(page.visible_text)
-        self.assertIn("Морал Сквад", visible_text)
-        self.assertIn("moralsqd", visible_text.lower())
+        self.assertNotIn(
+            "мы — «Морал Сквад», а коротко — moralsqd.", visible_text
+        )
         self.assertIn("index", page.meta["robots"])
         self.assertIn("max-image-preview:large", page.meta["robots"])
         self.assertEqual(page.meta["og:site_name"], "MORAL SQUAD")
